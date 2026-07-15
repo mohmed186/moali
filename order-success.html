@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Success - Nest Mart</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Quicksand", sans-serif;
+    }
+
+    :root {
+      --main-color: #3bb77e;
+      --main-dark: #2ea86f;
+      --dark-color: #253d4e;
+      --text-color: #7e7e7e;
+      --muted-color: #98a2b3;
+      --border-color: #e8edf2;
+      --white: #fff;
+      --soft-bg: #f8fafb;
+      --success-bg: #e9f9f1;
+      --success-text: #16a34a;
+      --shadow: 0 18px 40px rgba(0, 0, 0, 0.05);
+    }
+
+    body {
+      background: linear-gradient(180deg, #f8fafb 0%, #ffffff 100%);
+      color: var(--dark-color);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 16px;
+    }
+
+    .success-wrapper {
+      width: 100%;
+      max-width: 980px;
+    }
+
+    .success-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .success-breadcrumb a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--main-color);
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .success-breadcrumb a:hover {
+      color: var(--dark-color);
+    }
+
+    .success-breadcrumb span {
+      color: var(--muted-color);
+      font-size: 13px;
+    }
+
+    .success-breadcrumb p {
+      color: var(--dark-color);
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .success-card {
+      width: 100%;
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 42px 32px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .success-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(59, 183, 126, 0.12);
+      color: var(--main-color);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .success-icon {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 22px;
+      border-radius: 50%;
+      background: var(--success-bg);
+      color: var(--main-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      box-shadow: inset 0 0 0 8px rgba(59, 183, 126, 0.08);
+    }
+
+    .success-card h1 {
+      font-size: 42px;
+      line-height: 1.2;
+      margin-bottom: 14px;
+      color: #000;
+      font-weight: 800;
+    }
+
+    .success-card p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--text-color);
+      max-width: 680px;
+      margin: 0 auto 30px;
+    }
+
+    .success-highlight {
+      margin: 0 auto 28px;
+      max-width: 720px;
+      background: #f8fbf9;
+      border: 1px dashed #cfe9dc;
+      border-radius: 16px;
+      padding: 16px 18px;
+      color: var(--dark-color);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .success-highlight strong {
+      color: var(--main-color);
+    }
+
+    .meta-section-title {
+      text-align: left;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark-color);
+      margin: 28px 0 14px;
+    }
+
+    .order-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 0;
+    }
+
+    .meta-box {
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 18px 14px;
+      background: #fff;
+      text-align: left;
+      transition: 0.3s;
+      min-height: 100%;
+    }
+
+    .meta-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.04);
+    }
+
+    .meta-box span {
+      display: block;
+      font-size: 14px;
+      color: var(--text-color);
+      margin-bottom: 8px;
+    }
+
+    .meta-box strong {
+      display: block;
+      font-size: 18px;
+      color: var(--dark-color);
+      font-weight: 700;
+      line-height: 1.6;
+      word-break: break-word;
+    }
+
+    .status-confirmed {
+      color: var(--success-text);
+    }
+
+    .success-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .success-btn {
+      min-width: 190px;
+      height: 52px;
+      border-radius: 10px;
+      border: none;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .success-btn.primary {
+      background: var(--main-color);
+      color: #fff;
+    }
+
+    .success-btn.primary:hover {
+      background: var(--main-dark);
+    }
+
+    .success-btn.secondary {
+      background: #eef2f6;
+      color: var(--dark-color);
+    }
+
+    .success-btn.secondary:hover {
+      background: #dde5ec;
+    }
+
+    .success-note {
+      margin-top: 20px;
+      font-size: 14px;
+      color: var(--muted-color);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .success-card {
+        padding: 32px 20px;
+      }
+
+      .success-card h1 {
+        font-size: 32px;
+      }
+
+      .success-card p {
+        font-size: 16px;
+      }
+
+      .order-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .meta-section-title {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="success-wrapper">
+    <nav class="success-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">
+        <i class="fa-solid fa-house"></i>
+        Home
+      </a>
+      <span><i class="fa-solid fa-angle-right"></i></span>
+      <a href="checkout.html">Checkout</a>
+      <span><i class="fa-solid fa-angle-right"></i></span>
+      <p>Order Success</p>
+    </nav>
+
+    <section class="success-card">
+      <div class="success-badge">
+        <i class="fa-solid fa-bag-shopping"></i>
+        Order Completed
+      </div>
+
+      <div class="success-icon">
+        <i class="fa-solid fa-check"></i>
+      </div>
+
+      <h1>Your Order Has Been Placed Successfully</h1>
+      <p>
+        Thank you for shopping with us. Your order has been confirmed and will be processed soon.
+        You can return to the homepage or continue shopping for more products.
+      </p>
+
+      <div class="success-highlight">
+        Your order number is <strong id="highlightOrderNumber">#NEST-0000</strong>.
+        Please keep it for reference when contacting support.
+      </div>
+
+      <h3 class="meta-section-title">Order Details</h3>
+      <div class="order-meta">
+        <div class="meta-box">
+          <span>Order Number</span>
+          <strong id="orderNumber">#NEST-0000</strong>
+        </div>
+
+        <div class="meta-box">
+          <span>Status</span>
+          <strong class="status-confirmed">Confirmed</strong>
+        </div>
+
+        <div class="meta-box">
+          <span>Estimated Delivery</span>
+          <strong>2 - 4 Days</strong>
+        </div>
+      </div>
+
+      <h3 class="meta-section-title">Customer Information</h3>
+      <div class="order-meta">
+        <div class="meta-box">
+          <span>Customer Name</span>
+          <strong id="customerName">Customer</strong>
+        </div>
+
+        <div class="meta-box">
+          <span>Email</span>
+          <strong id="customerEmail">example@email.com</strong>
+        </div>
+
+        <div class="meta-box">
+          <span>Phone</span>
+          <strong id="customerPhone">Not provided</strong>
+        </div>
+      </div>
+
+      <h3 class="meta-section-title">Payment & Shipping</h3>
+      <div class="order-meta">
+        <div class="meta-box">
+          <span>Payment Method</span>
+          <strong id="paymentMethod">Cash on Delivery</strong>
+        </div>
+
+        <div class="meta-box">
+          <span>Total</span>
+          <strong id="orderTotal">$0.00</strong>
+        </div>
+
+        <div class="meta-box">
+          <span>Shipping Address</span>
+          <strong id="shippingAddress">No address available</strong>
+        </div>
+      </div>
+
+      <div class="success-actions">
+        <a href="index.html" class="success-btn primary">
+          <i class="fa-solid fa-house"></i>
+          Back to Home
+        </a>
+
+        <a href="shop.html" class="success-btn secondary">
+          <i class="fa-solid fa-cart-shopping"></i>
+          Continue Shopping
+        </a>
+      </div>
+
+      <p class="success-note">
+        A summary of your order may be shown here based on the latest saved checkout data in your browser.
+      </p>
+    </section>
+  </div>
+
+  <script>
+    const orderNumber = document.getElementById("orderNumber");
+    const highlightOrderNumber = document.getElementById("highlightOrderNumber");
+    const customerName = document.getElementById("customerName");
+    const customerEmail = document.getElementById("customerEmail");
+    const customerPhone = document.getElementById("customerPhone");
+    const paymentMethod = document.getElementById("paymentMethod");
+    const orderTotal = document.getElementById("orderTotal");
+    const shippingAddress = document.getElementById("shippingAddress");
+
+    function getLastOrder() {
+      try {
+        const data = JSON.parse(localStorage.getItem("lastOrder"));
+        return data && typeof data === "object" ? data : null;
+      } catch {
+        return null;
+      }
+    }
+
+    function buildAddress(order) {
+      const parts = [
+        order.address || "",
+        order.city || "",
+        order.country || "",
+        order.postalCode || ""
+      ].filter(Boolean);
+
+      return parts.length ? parts.join(", ") : "No address available";
+    }
+
+    const lastOrder = getLastOrder();
+
+    if (lastOrder) {
+      const safeOrderNumber = lastOrder.orderNumber || "#NEST-0000";
+
+      orderNumber.textContent = safeOrderNumber;
+      highlightOrderNumber.textContent = safeOrderNumber;
+      customerName.textContent = lastOrder.customerName || "Customer";
+      customerEmail.textContent = lastOrder.email || "No email";
+      customerPhone.textContent = lastOrder.phone || "Not provided";
+      paymentMethod.textContent = lastOrder.paymentMethod || "Cash on Delivery";
+      orderTotal.textContent = lastOrder.total || "$0.00";
+      shippingAddress.textContent = buildAddress(lastOrder);
+    } else {
+      orderNumber.textContent = "#NEST-0000";
+      highlightOrderNumber.textContent = "#NEST-0000";
+      customerName.textContent = "Customer";
+      customerEmail.textContent = "No email";
+      customerPhone.textContent = "Not provided";
+      paymentMethod.textContent = "Cash on Delivery";
+      orderTotal.textContent = "$0.00";
+      shippingAddress.textContent = "No address available";
+    }
+  </script>
+</body>
+</html>
