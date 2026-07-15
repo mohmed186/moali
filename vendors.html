@@ -1,0 +1,3193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nest Header</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --main-color: #3bb77e;
+      --dark-color: #253d4e;
+      --text-color: #7e7e7e;
+      --border-color: #ececec;
+      --soft-border: #bce3c9;
+      --white: #ffffff;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    body {
+      font-family: "Quicksand", sans-serif;
+      color: var(--dark-color);
+      background: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button,
+    input,
+    select {
+      font-family: inherit;
+    }
+
+    .container {
+      width: 95%;
+      max-width: 2000px;
+      margin: auto;
+    }
+
+    /* =================== HEADER TOP =================== */
+    .header-top {
+      border-bottom: 1px solid var(--border-color);
+      background: var(--white);
+      position: relative;
+      z-index: 1000;
+    }
+
+    .header-top-inner {
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 0;
+    }
+
+    .logo {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 180px;
+      max-width: 100%;
+      display: block;
+      object-fit: contain;
+    }
+
+    .search-area {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      min-width: 250px;
+    }
+
+    .search-wrapper {
+      width: 100%;
+      max-width: 760px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      border: 1.5px solid var(--soft-border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .category-select {
+      width: 185px;
+      height: 100%;
+      border: none;
+      outline: none;
+      padding: 0 18px;
+      border-right: 1px solid var(--border-color);
+      color: var(--main-color);
+      font-size: 15px;
+      font-weight: 600;
+      background: var(--white);
+      cursor: pointer;
+    }
+
+    .search-input-wrap {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+      gap: 12px;
+    }
+
+    .search-input-wrap input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 15px;
+      color: var(--dark-color);
+      background: transparent;
+    }
+
+    .search-input-wrap input::placeholder {
+      color: var(--text-color);
+      font-weight: 500;
+    }
+
+    .search-btn {
+      border: none;
+      background: transparent;
+      font-size: 20px;
+      color: #9b9b9b;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .search-btn:hover {
+      color: var(--main-color);
+    }
+
+    .location-box {
+      width: 185px;
+      height: 50px;
+      border: 1.5px solid var(--soft-border);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      flex-shrink: 0;
+      color: var(--main-color);
+      font-weight: 600;
+      background: var(--white);
+      cursor: pointer;
+    }
+
+    .location-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-shrink: 0;
+    }
+
+    .action-item {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      transition: 0.3s;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .action-item:hover {
+      color: var(--main-color);
+    }
+
+    .action-icon {
+      position: relative;
+      font-size: 27px;
+      line-height: 1;
+    }
+
+    .action-text {
+      font-size: 15px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .badge {
+      position: absolute;
+      top: -12px;
+      right: -10px;
+      width: 23px;
+      height: 23px;
+      border-radius: 50%;
+      background: var(--main-color);
+      color: #fff;
+      border: 2px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    /* =================== HEADER BOTTOM =================== */
+   /* =================== HEADER BOTTOM =================== */
+.header-bottom {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--white);
+}
+
+    .header-bottom-inner {
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .browse-btn {
+      min-width: 262px;
+      height: 42px;
+      border-radius: 4px;
+      background: var(--main-color);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      font-size: 20px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .browse-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+    }
+
+    .main-nav {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .nav-list a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 20px;
+      font-weight: 700;
+      transition: 0.3s;
+      white-space: nowrap;
+    }
+
+    .nav-list a:hover {
+      color: var(--main-color);
+    }
+
+    .support-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .support-box i {
+      font-size: 34px;
+      color: #7b7b7b;
+    }
+
+    .support-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .support-text strong {
+      color: var(--main-color);
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .support-text span {
+      color: var(--text-color);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* =================== MOBILE TOP BAR =================== */
+    .mobile-top-actions {
+      display: none;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .menu-toggle {
+      width: 46px;
+      height: 46px;
+      border: 1px solid #ddd;
+      background: #fff;
+      border-radius: 8px;
+      font-size: 20px;
+      color: var(--dark-color);
+      cursor: pointer;
+    }
+
+    /* =================== SIDEBAR MENU =================== */
+    .mobile-sidebar {
+      position: fixed;
+      top: 0;
+      left: -320px;
+      width: 300px;
+      max-width: 82vw;
+      height: 100vh;
+      background: #fff;
+      z-index: 2000;
+      box-shadow: var(--shadow);
+      transition: left 0.35s ease;
+      overflow-y: auto;
+      padding: 18px 16px 24px;
+    }
+
+    .mobile-sidebar.active {
+      left: 0;
+    }
+
+    .sidebar-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.28);
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s;
+      z-index: 1500;
+    }
+
+    .sidebar-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .sidebar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .sidebar-logo img {
+      width: 140px;
+      display: block;
+    }
+
+    .close-sidebar {
+      width: 38px;
+      height: 38px;
+      border: none;
+      background: #f5f5f5;
+      border-radius: 8px;
+      font-size: 18px;
+      cursor: pointer;
+      color: var(--dark-color);
+    }
+
+    .sidebar-search {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .sidebar-search select,
+    .sidebar-search input,
+    .sidebar-search button,
+    .sidebar-location,
+    .sidebar-browse {
+      width: 100%;
+      height: 46px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .sidebar-search select,
+    .sidebar-search input,
+    .sidebar-location {
+      border: 1px solid #ddd;
+      outline: none;
+      padding: 0 14px;
+      background: #fff;
+    }
+
+    .sidebar-search button,
+    .sidebar-browse {
+      border: none;
+      background: var(--main-color);
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .sidebar-browse {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .sidebar-location {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--main-color);
+      font-weight: 600;
+    }
+
+    .sidebar-nav,
+    .sidebar-actions {
+      display: grid;
+      gap: 10px;
+    }
+
+    .sidebar-nav {
+      margin-bottom: 16px;
+    }
+
+    .sidebar-nav a,
+    .sidebar-actions a {
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      background: #fff;
+      padding: 13px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark-color);
+    }
+
+    .sidebar-actions a {
+      position: relative;
+      justify-content: flex-start;
+      gap: 12px;
+    }
+
+    .mobile-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--main-color);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .sidebar-support {
+      margin-top: 18px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sidebar-support i {
+      font-size: 28px;
+      color: #7b7b7b;
+    }
+
+   
+    /* =================== RESPONSIVE =================== */
+    @media (max-width: 1400px) {
+      .nav-list {
+        gap: 22px;
+      }
+
+      .header-actions {
+        gap: 18px;
+      }
+
+      .action-text {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .support-box {
+        display: none;
+      }
+
+      .nav-list {
+        gap: 18px;
+      }
+
+      .browse-btn {
+        min-width: 220px;
+      }
+
+      .location-box {
+        width: 165px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .search-area,
+      .location-box,
+      .header-actions,
+      .header-bottom {
+        display: none;
+      }
+
+      .mobile-top-actions {
+        display: flex;
+      }
+
+      .header-top-inner {
+        min-height: 76px;
+      }
+
+      .logo img {
+        width: 150px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .container {
+        width: 92%;
+      }
+
+      .logo img {
+        width: 130px;
+      }
+
+      .mobile-sidebar {
+        width: 280px;
+      }
+
+      .hero-demo h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+<body>
+
+  <!-- =================== HEADER TOP =================== -->
+  <header class="header-top">
+    <div class="container">
+      <div class="header-top-inner">
+
+        <a href="index.html" class="logo">
+          <img src="logo-vvC7y5Z-.svg" alt="Nest Logo" />
+        </a>
+
+        <div class="search-area">
+          <form class="search-wrapper" action="shop.html" method="get">
+            <select class="category-select" name="category">
+              <option value="all">All Categories</option>
+              <option value="groceries">Groceries</option>
+              <option value="electronics">Electronics</option>
+              <option value="fashion">Fashion</option>
+              <option value="shop">Shop</option>
+            </select>
+
+            <div class="search-input-wrap">
+              <input type="text" name="q" placeholder="Search Your Items..." />
+              <button class="search-btn" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="location-box">
+          <div class="location-left">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Your Location</span>
+          </div>
+          <i class="fa-solid fa-angle-down"></i>
+        </div>
+
+        <div class="header-actions">
+          <a href="compare.html" class="action-item">
+            <div class="action-icon">
+              <i class="fa-solid fa-code-compare"></i>
+            </div>
+            <span class="action-text">Compare</span>
+          </a>
+
+          <a href="wishlist.html" class="action-item">
+            <div class="action-icon">
+              <i class="fa-regular fa-heart"></i>
+            </div>
+            <span class="action-text">Wishlist</span>
+          </a>
+
+          <a href="checkout.html" class="action-item cart">
+            <div class="action-icon">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="badge" id="cartCount">0</span>
+            </div>
+            <span class="action-text">Cart</span>
+          </a>
+
+          <a href="account.html" class="action-item">
+            <div class="action-icon">
+              <i class="fa-regular fa-user"></i>
+            </div>
+            <span class="action-text">Account</span>
+          </a>
+        </div>
+
+        <div class="mobile-top-actions">
+          <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- =================== HEADER BOTTOM =================== -->
+  <nav class="header-bottom">
+    <div class="container">
+      <div class="header-bottom-inner">
+
+        <a href="categories.html" class="browse-btn">
+          <div class="browse-left">
+            <i class="fa-solid fa-border-all"></i>
+            <span>Browse All Categories</span>
+          </div>
+          <i class="fa-solid fa-angle-down"></i>
+        </a>
+
+        <div class="main-nav">
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About <i class="fa-solid fa-angle-down"></i></a></li>
+            <li><a href="shop.html">Shop <i class="fa-solid fa-angle-down"></i></a></li>
+            <li><a href="vendors.html">Vendors <i class="fa-solid fa-angle-down"></i></a></li>
+            <li><a href="mega-menu.html">Mega Menu <i class="fa-solid fa-angle-down"></i></a></li>
+            <li><a href="blogs.html">Blogs <i class="fa-solid fa-angle-down"></i></a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="support-box">
+          <i class="fa-solid fa-headphones-simple"></i>
+          <div class="support-text">
+            <strong>305-2095951</strong>
+            <span>24/7 Support Center</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- =================== MOBILE SIDEBAR =================== -->
+  <aside class="mobile-sidebar" id="mobileSidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="sidebar-logo">
+        <img src="logo-vvC7y5Z-.svg" alt="Nest Logo" />
+      </a>
+
+      <button class="close-sidebar" id="closeSidebar" aria-label="Close menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="sidebar-search">
+      <a href="categories.html" class="sidebar-browse">
+        <i class="fa-solid fa-border-all"></i>
+        Browse All Categories
+      </a>
+
+      <select>
+        <option>All Categories</option>
+        <option>Groceries</option>
+        <option>Electronics</option>
+        <option>Fashion</option>
+        <option>Shop</option>
+      </select>
+
+      <input type="text" placeholder="Search Your Items..." />
+
+      <div class="sidebar-location">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Your Location</span>
+        </div>
+        <i class="fa-solid fa-angle-down"></i>
+      </div>
+
+      <button type="button">Search</button>
+    </div>
+
+    <div class="sidebar-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About <i class="fa-solid fa-angle-down"></i></a>
+      <a href="shop.html">Shop <i class="fa-solid fa-angle-down"></i></a>
+      <a href="vendors.html">Vendors <i class="fa-solid fa-angle-down"></i></a>
+      <a href="mega-menu.html">Mega Menu <i class="fa-solid fa-angle-down"></i></a>
+      <a href="blogs.html">Blogs <i class="fa-solid fa-angle-down"></i></a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="sidebar-actions">
+      <a href="compare.html">
+        <i class="fa-solid fa-code-compare"></i>
+        <span>Compare</span>
+        <div class="mobile-badge">3</div>
+      </a>
+
+      <a href="wishlist.html">
+        <i class="fa-regular fa-heart"></i>
+        <span>Wishlist</span>
+        <div class="mobile-badge">5</div>
+      </a>
+
+      <a href="checkout.html">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span>Cart</span>
+        <div class="mobile-badge">2</div>
+      </a>
+
+      <a href="account.html">
+        <i class="fa-regular fa-user"></i>
+        <span>Account</span>
+      </a>
+    </div>
+
+    <div class="sidebar-support">
+      <i class="fa-solid fa-headphones-simple"></i>
+      <div class="support-text">
+        <strong>305-2095951</strong>
+        <span>24/7 Support Center</span>
+      </div>
+    </div>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileSidebar = document.getElementById("mobileSidebar");
+    const closeSidebar = document.getElementById("closeSidebar");
+    const sidebarOverlay = document.getElementById("sidebarOverlay");
+
+    function openSidebar() {
+      mobileSidebar.classList.add("active");
+      sidebarOverlay.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeMenu() {
+      mobileSidebar.classList.remove("active");
+      sidebarOverlay.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    if (menuToggle) menuToggle.addEventListener("click", openSidebar);
+    if (closeSidebar) closeSidebar.addEventListener("click", closeMenu);
+    if (sidebarOverlay) sidebarOverlay.addEventListener("click", closeMenu);
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        closeMenu();
+      }
+    });
+  </script>
+<section class="vendors-hero-section">
+  <div class="vendors-container">
+    <!-- Breadcrumb -->
+    <nav class="vendors-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">
+        <i class="fa-solid fa-house"></i>
+        Home
+      </a>
+      <span><i class="fa-solid fa-angle-right"></i></span>
+      <p>Vendor List</p>
+    </nav>
+
+    <!-- Title -->
+    <div class="vendors-hero-content">
+      <span class="vendors-label">Trusted Sellers</span>
+      <h1>Vendors List</h1>
+
+      <!-- Search -->
+      <div class="vendors-search-box">
+        <input
+          type="text"
+          id="vendorSearchInput"
+          placeholder="Search vendors by name or ID..."
+          aria-label="Search vendors by name or ID"
+        />
+        <button type="button" id="vendorSearchBtn" aria-label="Search vendors">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="vendors-toolbar">
+        <p id="vendorsResultsText">We have <span>780</span> vendors now</p>
+
+        <div class="vendors-toolbar-right">
+          <div class="vendors-view-buttons">
+            <button class="vendors-view-btn active" type="button" aria-label="Grid view">
+              <i class="fa-solid fa-grip"></i>
+            </button>
+            <button class="vendors-view-btn" type="button" aria-label="List view">
+              <i class="fa-solid fa-list"></i>
+            </button>
+          </div>
+
+          <select class="vendors-select" id="vendorsShowSelect">
+            <option value="50">Show: 50</option>
+            <option value="20">Show: 20</option>
+            <option value="30">Show: 30</option>
+            <option value="100">Show: 100</option>
+          </select>
+
+          <select class="vendors-select" id="vendorsSortSelect">
+            <option value="mall">Sort by: Mall</option>
+            <option value="popularity">Sort by: Popularity</option>
+            <option value="rating">Sort by: Rating</option>
+            <option value="latest">Sort by: Latest</option>
+          </select>
+        </div>
+      </div>
+
+      <p class="vendors-search-feedback" id="vendorsSearchFeedback" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .vendors-hero-section {
+    padding: 0 0 54px;
+    background: #fff;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .vendors-container {
+    width: 94%;
+    max-width: 1600px;
+    margin: auto;
+  }
+
+  .vendors-breadcrumb {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1px solid #eef1f4;
+  }
+
+  .vendors-breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #3bb77e;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .vendors-breadcrumb a:hover {
+    color: #253d4e;
+  }
+
+  .vendors-breadcrumb span {
+    color: #7e7e7e;
+    font-size: 13px;
+  }
+
+  .vendors-breadcrumb p {
+    margin: 0;
+    color: #253d4e;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .vendors-hero-content {
+    padding: 58px 0 0;
+    text-align: center;
+  }
+
+  .vendors-label {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(59, 183, 126, 0.12);
+    color: #3bb77e;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+  }
+
+  .vendors-hero-content h1 {
+    margin: 0 0 38px;
+    color: #253d4e;
+    font-size: 78px;
+    line-height: 1.1;
+    font-weight: 800;
+  }
+
+  .vendors-search-box {
+    width: 100%;
+    max-width: 760px;
+    height: 64px;
+    margin: 0 auto 36px;
+    border: 1.5px solid #9ee0bf;
+    border-radius: 999px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  }
+
+  .vendors-search-box input {
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0 22px;
+    font-size: 16px;
+    color: #253d4e;
+  }
+
+  .vendors-search-box input::placeholder {
+    color: #a0aec0;
+  }
+
+  .vendors-search-box input:focus {
+    box-shadow: inset 0 0 0 2px rgba(59, 183, 126, 0.14);
+  }
+
+  .vendors-search-box button {
+    width: 70px;
+    height: 100%;
+    border: none;
+    background: transparent;
+    color: #253d4e;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .vendors-search-box button:hover {
+    color: #3bb77e;
+  }
+
+  .vendors-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .vendors-toolbar p {
+    margin: 0;
+    color: #253d4e;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .vendors-toolbar p span {
+    color: #3bb77e;
+    font-weight: 700;
+  }
+
+  .vendors-toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .vendors-view-buttons {
+    display: flex;
+    gap: 8px;
+  }
+
+  .vendors-view-btn {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 10px;
+    background: #dff1e7;
+    color: #7e8a9a;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .vendors-view-btn.active {
+    background: #3bb77e;
+    color: #fff;
+  }
+
+  .vendors-view-btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .vendors-select {
+    min-width: 170px;
+    height: 42px;
+    border: 1px solid #dfe4ea;
+    border-radius: 10px;
+    padding: 0 16px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #253d4e;
+    background: #fff;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .vendors-search-feedback {
+    min-height: 22px;
+    margin-top: 16px;
+    color: #7e7e7e;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  @media (max-width: 1200px) {
+    .vendors-hero-content h1 {
+      font-size: 64px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .vendors-container {
+      width: 92%;
+    }
+
+    .vendors-breadcrumb a,
+    .vendors-breadcrumb p {
+      font-size: 16px;
+    }
+
+    .vendors-hero-content {
+      padding-top: 40px;
+    }
+
+    .vendors-hero-content h1 {
+      font-size: 44px;
+      margin-bottom: 26px;
+    }
+
+    .vendors-search-box {
+      height: 56px;
+      margin-bottom: 28px;
+    }
+
+    .vendors-toolbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .vendors-toolbar-right {
+      width: 100%;
+    }
+
+    .vendors-select {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .vendors-hero-content h1 {
+      font-size: 34px;
+    }
+
+    .vendors-search-box input {
+      font-size: 14px;
+      padding: 0 16px;
+    }
+
+    .vendors-search-box button {
+      width: 56px;
+      font-size: 20px;
+    }
+
+    .vendors-toolbar p {
+      font-size: 16px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("vendorSearchInput");
+    const searchBtn = document.getElementById("vendorSearchBtn");
+    const viewButtons = document.querySelectorAll(".vendors-view-btn");
+    const feedback = document.getElementById("vendorsSearchFeedback");
+    const showSelect = document.getElementById("vendorsShowSelect");
+    const sortSelect = document.getElementById("vendorsSortSelect");
+
+    function runVendorSearch() {
+      const value = searchInput.value.trim();
+
+      if (!feedback) return;
+
+      if (value) {
+        feedback.textContent = `Searching for: ${value}`;
+      } else {
+        feedback.textContent = "Enter a vendor name or ID to search.";
+      }
+    }
+
+    if (searchBtn && searchInput) {
+      searchBtn.addEventListener("click", runVendorSearch);
+
+      searchInput.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          runVendorSearch();
+        }
+      });
+    }
+
+    viewButtons.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        viewButtons.forEach((b) => b.classList.remove("active"));
+        this.classList.add("active");
+      });
+    });
+
+    if (showSelect) {
+      showSelect.addEventListener("change", function () {
+        if (feedback) {
+          feedback.textContent = `Display updated: ${this.options[this.selectedIndex].text}`;
+        }
+      });
+    }
+
+    if (sortSelect) {
+      sortSelect.addEventListener("change", function () {
+        if (feedback) {
+          feedback.textContent = `Sorting updated: ${this.options[this.selectedIndex].text}`;
+        }
+      });
+    }
+  });
+</script>
+<section class="vendors-list-section">
+  <div class="vendors-container">
+    <div class="vendors-grid" id="vendorsGrid">
+
+      <!-- 1 -->
+      <article class="vendor-card"
+        data-id="V001"
+        data-name="Nature Food"
+        data-type="Mall"
+        data-products="200"
+        data-year="2012"
+        data-rating="5">
+        <span class="vendor-badge pink">Mall</span>
+        <div class="vendor-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/3082/3082031.png" alt="Nature Food" loading="lazy">
+        </div>
+        <div class="vendor-meta">
+          <span>Since 2012</span>
+          <span class="vendor-products">200 products</span>
+        </div>
+        <h3>Nature Food</h3>
+        <div class="vendor-rating">
+          <span class="stars">★★★★★</span>
+          <span>(5.0)</span>
+        </div>
+        <p><i class="fa-regular fa-location-dot"></i><strong>Address:</strong> 5171 W Campbell Ave Kent, Utah 53127 United States</p>
+        <p><i class="fa-regular fa-phone"></i><strong>Call Us:</strong> (+91) - 540-025-123456</p>
+        <a href="vendor-details.html" class="vendor-btn">Visit Store <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- 2 -->
+      <article class="vendor-card active"
+        data-id="V002"
+        data-name="Country Crock"
+        data-type="Preferred"
+        data-products="100"
+        data-year="2013"
+        data-rating="4">
+        <span class="vendor-badge orange">Preferred</span>
+        <div class="vendor-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/590/590685.png" alt="Country Crock" loading="lazy">
+        </div>
+        <div class="vendor-meta">
+          <span>Since 2013</span>
+          <span class="vendor-products">100 products</span>
+        </div>
+        <h3>Country Crock</h3>
+        <div class="vendor-rating">
+          <span class="stars">★★★★☆</span>
+          <span>(4.0)</span>
+        </div>
+        <p><i class="fa-regular fa-location-dot"></i><strong>Address:</strong> 5171 W Campbell Ave Kent, Utah 53127 United States</p>
+        <p><i class="fa-regular fa-phone"></i><strong>Call Us:</strong> (+91) - 540-025-123456</p>
+        <a href="vendor-details.html" class="vendor-btn">Visit Store <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- 3 -->
+      <article class="vendor-card"
+        data-id="V003"
+        data-name="Hambger Hel"
+        data-type="Mall"
+        data-products="150"
+        data-year="2010"
+        data-rating="2">
+        <span class="vendor-badge pink">Mall</span>
+        <div class="vendor-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Hambger Hel" loading="lazy">
+        </div>
+        <div class="vendor-meta">
+          <span>Since 2010</span>
+          <span class="vendor-products">150 products</span>
+        </div>
+        <h3>Hambger Hel</h3>
+        <div class="vendor-rating">
+          <span class="stars">★★☆☆☆</span>
+          <span>(2.0)</span>
+        </div>
+        <p><i class="fa-regular fa-location-dot"></i><strong>Address:</strong> 5171 W Campbell Ave Kent, Utah 53127 United States</p>
+        <p><i class="fa-regular fa-phone"></i><strong>Call Us:</strong> (+91) - 540-025-123456</p>
+        <a href="vendor-details.html" class="vendor-btn">Visit Store <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- 4 -->
+      <article class="vendor-card"
+        data-id="V004"
+        data-name="Totino’s Pizza"
+        data-type="Mall"
+        data-products="560"
+        data-year="2015"
+        data-rating="1">
+        <span class="vendor-badge pink">Mall</span>
+        <div class="vendor-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/3082/3082038.png" alt="Totino’s Pizza" loading="lazy">
+        </div>
+        <div class="vendor-meta">
+          <span>Since 2015</span>
+          <span class="vendor-products">560 products</span>
+        </div>
+        <h3>Totino’s Pizza</h3>
+        <div class="vendor-rating">
+          <span class="stars">★☆☆☆☆</span>
+          <span>(1.0)</span>
+        </div>
+        <p><i class="fa-regular fa-location-dot"></i><strong>Address:</strong> 5171 W Campbell Ave Kent, Utah 53127 United States</p>
+        <p><i class="fa-regular fa-phone"></i><strong>Call Us:</strong> (+91) - 540-025-123456</p>
+        <a href="vendor-details.html" class="vendor-btn">Visit Store <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- 5 -->
+      <article class="vendor-card"
+        data-id="V005"
+        data-name="Maruchan Ramen"
+        data-type="Standard"
+        data-products="120"
+        data-year="2020"
+        data-rating="3">
+        <div class="vendor-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/415/415733.png" alt="Maruchan Ramen" loading="lazy">
+        </div>
+        <div class="vendor-meta">
+          <span>Since 2020</span>
+          <span class="vendor-products">120 products</span>
+        </div>
+        <h3>Maruchan Ramen</h3>
+        <div class="vendor-rating">
+          <span class="stars">★★★☆☆</span>
+          <span>(3.0)</span>
+        </div>
+        <p><i class="fa-regular fa-location-dot"></i><strong>Address:</strong> 5171 W Campbell Ave Kent, Utah 53127 United States</p>
+        <p><i class="fa-regular fa-phone"></i><strong>Call Us:</strong> (+91) - 540-025-123456</p>
+        <a href="vendor-details.html" class="vendor-btn">Visit Store <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- 6 -->
+      <article class="vendor-card"
+        data-id="V006"
+        data-name="USA Noodle Soup"
+        data-type="Standard"
+        data-products="230"
+        data-year="2022"
+        data-rating="4">
+        <div class="vendor-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/2515/2515183.png" alt="USA Noodle Soup" loading="lazy">
+        </div>
+        <div class="vendor-meta">
+          <span>Since 2022</span>
+          <span class="vendor-products">230 products</span>
+        </div>
+        <h3>USA Noodle Soup</h3>
+        <div class="vendor-rating">
+          <span class="stars">★★★★☆</span>
+          <span>(4.0)</span>
+        </div>
+        <p><i class="fa-regular fa-location-dot"></i><strong>Address:</strong> 5171 W Campbell Ave Kent, Utah 53127 United States</p>
+        <p><i class="fa-regular fa-phone"></i><strong>Call Us:</strong> (+91) - 540-025-123456</p>
+        <a href="vendor-details.html" class="vendor-btn">Visit Store <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- 7 -->
+      <article class="vendor-card"
+        data-id="V007"
+        data-name="Red Baron Pizza"
+        data-type="Standard"
+        data-products="120"
+        data-year="2021"
+        data-rating="5">
+        <div class="vendor-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/766/766032.png" alt="Red Baron Pizza" loading="lazy">
+        </div>
+        <div class="vendor-meta">
+          <span>Since 2021</span>
+          <span class="vendor-products">120 products</span>
+        </div>
+        <h3>Red Baron Pizza</h3>
+        <div class="vendor-rating">
+          <span class="stars">★★★★★</span>
+          <span>(5.0)</span>
+        </div>
+        <p><i class="fa-regular fa-location-dot"></i><strong>Address:</strong> 5171 W Campbell Ave Kent, Utah 53127 United States</p>
+        <p><i class="fa-regular fa-phone"></i><strong>Call Us:</strong> (+91) - 540-025-123456</p>
+        <a href="vendor-details.html" class="vendor-btn">Visit Store <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- 8 -->
+      <article class="vendor-card"
+        data-id="V008"
+        data-name="Mrs. Smith's Pie"
+        data-type="Standard"
+        data-products="500"
+        data-year="2023"
+        data-rating="5">
+        <div class="vendor-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/766/766043.png" alt="Mrs. Smith's Pie" loading="lazy">
+        </div>
+        <div class="vendor-meta">
+          <span>Since 2023</span>
+          <span class="vendor-products">500 products</span>
+        </div>
+        <h3>Mrs. Smith's Pie</h3>
+        <div class="vendor-rating">
+          <span class="stars">★★★★★</span>
+          <span>(5.0)</span>
+        </div>
+        <p><i class="fa-regular fa-location-dot"></i><strong>Address:</strong> 5171 W Campbell Ave Kent, Utah 53127 United States</p>
+        <p><i class="fa-regular fa-phone"></i><strong>Call Us:</strong> (+91) - 540-025-123456</p>
+        <a href="vendor-details.html" class="vendor-btn">Visit Store <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- 9 -->
+      <article class="vendor-card active"
+        data-id="V009"
+        data-name="Dove Promises"
+        data-type="Preferred"
+        data-products="1000"
+        data-year="2021"
+        data-rating="4">
+        <div class="vendor-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/1147/1147805.png" alt="Dove Promises" loading="lazy">
+        </div>
+        <div class="vendor-meta">
+          <span>Since 2021</span>
+          <span class="vendor-products">1000 products</span>
+        </div>
+        <h3>Dove Promises</h3>
+        <div class="vendor-rating">
+          <span class="stars">★★★★☆</span>
+          <span>(4.0)</span>
+        </div>
+        <p><i class="fa-regular fa-location-dot"></i><strong>Address:</strong> 5171 W Campbell Ave Kent, Utah 53127 United States</p>
+        <p><i class="fa-regular fa-phone"></i><strong>Call Us:</strong> (+91) - 540-025-123456</p>
+        <a href="vendor-details.html" class="vendor-btn">Visit Store <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- 10 -->
+      <article class="vendor-card"
+        data-id="V010"
+        data-name="Mrs. Dash"
+        data-type="Standard"
+        data-products="850"
+        data-year="2013"
+        data-rating="2">
+        <div class="vendor-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/2909/2909762.png" alt="Mrs. Dash" loading="lazy">
+        </div>
+        <div class="vendor-meta">
+          <span>Since 2013</span>
+          <span class="vendor-products">850 products</span>
+        </div>
+        <h3>Mrs. Dash</h3>
+        <div class="vendor-rating">
+          <span class="stars">★★☆☆☆</span>
+          <span>(2.0)</span>
+        </div>
+        <p><i class="fa-regular fa-location-dot"></i><strong>Address:</strong> 5171 W Campbell Ave Kent, Utah 53127 United States</p>
+        <p><i class="fa-regular fa-phone"></i><strong>Call Us:</strong> (+91) - 540-025-123456</p>
+        <a href="vendor-details.html" class="vendor-btn">Visit Store <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- 11 -->
+      <article class="vendor-card"
+        data-id="V011"
+        data-name="Lindt Grocery A1"
+        data-type="Standard"
+        data-products="700"
+        data-year="2015"
+        data-rating="3">
+        <div class="vendor-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/5346/5346201.png" alt="Lindt Grocery A1" loading="lazy">
+        </div>
+        <div class="vendor-meta">
+          <span>Since 2015</span>
+          <span class="vendor-products">700 products</span>
+        </div>
+        <h3>Lindt Grocery A1</h3>
+        <div class="vendor-rating">
+          <span class="stars">★★★☆☆</span>
+          <span>(3.0)</span>
+        </div>
+        <p><i class="fa-regular fa-location-dot"></i><strong>Address:</strong> 5171 W Campbell Ave Kent, Utah 53127 United States</p>
+        <p><i class="fa-regular fa-phone"></i><strong>Call Us:</strong> (+91) - 540-025-123456</p>
+        <a href="vendor-details.html" class="vendor-btn">Visit Store <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- 12 -->
+      <article class="vendor-card"
+        data-id="V012"
+        data-name="Snyder’s-Lance"
+        data-type="Standard"
+        data-products="250"
+        data-year="2016"
+        data-rating="2">
+        <div class="vendor-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/1046/1046769.png" alt="Snyder’s-Lance" loading="lazy">
+        </div>
+        <div class="vendor-meta">
+          <span>Since 2016</span>
+          <span class="vendor-products">250 products</span>
+        </div>
+        <h3>Snyder’s-Lance</h3>
+        <div class="vendor-rating">
+          <span class="stars">★★☆☆☆</span>
+          <span>(2.0)</span>
+        </div>
+        <p><i class="fa-regular fa-location-dot"></i><strong>Address:</strong> 5171 W Campbell Ave Kent, Utah 53127 United States</p>
+        <p><i class="fa-regular fa-phone"></i><strong>Call Us:</strong> (+91) - 540-025-123456</p>
+        <a href="vendor-details.html" class="vendor-btn">Visit Store <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- 13 -->
+      <article class="vendor-card active"
+        data-id="V013"
+        data-name="Dreyer’s/Edy’s"
+        data-type="Preferred"
+        data-products="200"
+        data-year="2017"
+        data-rating="1">
+        <div class="vendor-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/1046/1046751.png" alt="Dreyer’s/Edy’s" loading="lazy">
+        </div>
+        <div class="vendor-meta">
+          <span>Since 2017</span>
+          <span class="vendor-products">200 products</span>
+        </div>
+        <h3>Dreyer’s/Edy’s</h3>
+        <div class="vendor-rating">
+          <span class="stars">★☆☆☆☆</span>
+          <span>(1.0)</span>
+        </div>
+        <p><i class="fa-regular fa-location-dot"></i><strong>Address:</strong> 5171 W Campbell Ave Kent, Utah 53127 United States</p>
+        <p><i class="fa-regular fa-phone"></i><strong>Call Us:</strong> (+91) - 540-025-123456</p>
+        <a href="vendor-details.html" class="vendor-btn">Visit Store <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- 14 -->
+      <article class="vendor-card"
+        data-id="V014"
+        data-name="Wonderful"
+        data-type="Standard"
+        data-products="50"
+        data-year="2018"
+        data-rating="3">
+        <div class="vendor-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/590/590699.png" alt="Wonderful" loading="lazy">
+        </div>
+        <div class="vendor-meta">
+          <span>Since 2018</span>
+          <span class="vendor-products">50 products</span>
+        </div>
+        <h3>Wonderful</h3>
+        <div class="vendor-rating">
+          <span class="stars">★★★☆☆</span>
+          <span>(3.0)</span>
+        </div>
+        <p><i class="fa-regular fa-location-dot"></i><strong>Address:</strong> 5171 W Campbell Ave Kent, Utah 53127 United States</p>
+        <p><i class="fa-regular fa-phone"></i><strong>Call Us:</strong> (+91) - 540-025-123456</p>
+        <a href="vendor-details.html" class="vendor-btn">Visit Store <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- 15 -->
+      <article class="vendor-card"
+        data-id="V015"
+        data-name="Almonds"
+        data-type="Standard"
+        data-products="20"
+        data-year="2017"
+        data-rating="5">
+        <div class="vendor-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/3194/3194766.png" alt="Almonds" loading="lazy">
+        </div>
+        <div class="vendor-meta">
+          <span>Since 2017</span>
+          <span class="vendor-products">20 products</span>
+        </div>
+        <h3>Almonds</h3>
+        <div class="vendor-rating">
+          <span class="stars">★★★★★</span>
+          <span>(5.0)</span>
+        </div>
+        <p><i class="fa-regular fa-location-dot"></i><strong>Address:</strong> 5171 W Campbell Ave Kent, Utah 53127 United States</p>
+        <p><i class="fa-regular fa-phone"></i><strong>Call Us:</strong> (+91) - 540-025-123456</p>
+        <a href="vendor-details.html" class="vendor-btn">Visit Store <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+      <!-- 16 -->
+      <article class="vendor-card"
+        data-id="V016"
+        data-name="Pistachios"
+        data-type="Standard"
+        data-products="560"
+        data-year="2016"
+        data-rating="5">
+        <div class="vendor-logo">
+          <img src="https://cdn-icons-png.flaticon.com/512/3082/3082031.png" alt="Pistachios" loading="lazy">
+        </div>
+        <div class="vendor-meta">
+          <span>Since 2016</span>
+          <span class="vendor-products">560 products</span>
+        </div>
+        <h3>Pistachios</h3>
+        <div class="vendor-rating">
+          <span class="stars">★★★★★</span>
+          <span>(5.0)</span>
+        </div>
+        <p><i class="fa-regular fa-location-dot"></i><strong>Address:</strong> 5171 W Campbell Ave Kent, Utah 53127 United States</p>
+        <p><i class="fa-regular fa-phone"></i><strong>Call Us:</strong> (+91) - 540-025-123456</p>
+        <a href="vendor-details.html" class="vendor-btn">Visit Store <i class="fa-solid fa-arrow-right"></i></a>
+      </article>
+
+    </div>
+
+    <p class="vendors-empty-state" id="vendorsEmptyState">No vendors found.</p>
+  </div>
+</section>
+
+<style>
+  .vendors-list-section {
+    padding: 10px 0 70px;
+    background: #fff;
+  }
+
+  .vendors-container {
+    width: 98%;
+    max-width: 1920px;
+    margin: auto;
+  }
+
+  .vendors-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+
+  .vendors-grid.list-view {
+    grid-template-columns: 1fr;
+  }
+
+  .vendor-card {
+    position: relative;
+    border: 1px solid #dfe4ea;
+    border-radius: 20px;
+    background: #fff;
+    padding: 26px 22px 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .vendor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.05);
+  }
+
+  .vendor-card.active {
+    border-color: #8dd9b0;
+  }
+
+  .vendor-card.hidden {
+    display: none;
+  }
+
+  .vendors-grid.list-view .vendor-card {
+    display: grid;
+    grid-template-columns: 140px 1fr auto;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .vendors-grid.list-view .vendor-logo {
+    margin-bottom: 0;
+    height: 110px;
+  }
+
+  .vendors-grid.list-view .vendor-meta,
+  .vendors-grid.list-view .vendor-rating,
+  .vendors-grid.list-view .vendor-card p {
+    margin-bottom: 10px;
+  }
+
+  .vendors-grid.list-view .vendor-btn {
+    margin-top: 0;
+    align-self: center;
+  }
+
+  .vendor-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 72px;
+    height: 34px;
+    border-radius: 0 16px 0 16px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .vendor-badge.pink {
+    background: #ef4b9a;
+  }
+
+  .vendor-badge.orange {
+    background: #ff8a1e;
+  }
+
+  .vendor-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px;
+    margin-bottom: 20px;
+  }
+
+  .vendor-logo img {
+    max-width: 120px;
+    max-height: 120px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .vendor-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+
+  .vendor-meta span:first-child {
+    font-size: 15px;
+    color: #b2b2b2;
+  }
+
+  .vendor-products {
+    background: #def9ec;
+    color: #3bb77e !important;
+    font-size: 14px !important;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 8px;
+  }
+
+  .vendor-card h3 {
+    font-size: 24px;
+    line-height: 1.3;
+    color: #253d4e;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .vendor-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .vendor-rating .stars {
+    color: #f5b400;
+    letter-spacing: 1px;
+    font-size: 16px;
+  }
+
+  .vendor-rating span:last-child {
+    color: #98a2b3;
+    font-size: 15px;
+  }
+
+  .vendor-card p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #7e7e7e;
+    margin-bottom: 10px;
+  }
+
+  .vendor-card p i {
+    color: #3bb77e;
+    margin-right: 8px;
+  }
+
+  .vendor-card p strong {
+    color: #98a2b3;
+    margin-right: 6px;
+  }
+
+  .vendor-btn {
+    margin-top: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 132px;
+    height: 44px;
+    padding: 0 18px;
+    background: #3bb77e;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.3s;
+  }
+
+  .vendor-btn:hover {
+    background: #2ea86f;
+  }
+
+  .vendors-empty-state {
+    display: none;
+    text-align: center;
+    margin-top: 26px;
+    color: #7e7e7e;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .vendors-empty-state.show {
+    display: block;
+  }
+
+  @media (max-width: 1400px) {
+    .vendors-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .vendors-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .vendors-grid.list-view .vendor-card {
+      grid-template-columns: 110px 1fr;
+    }
+
+    .vendors-grid.list-view .vendor-btn {
+      grid-column: 2;
+      width: fit-content;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .vendors-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .vendor-card {
+      padding: 22px 18px 20px;
+    }
+
+    .vendor-card h3 {
+      font-size: 22px;
+    }
+
+    .vendors-grid.list-view .vendor-card {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .vendors-grid.list-view .vendor-logo {
+      height: 90px;
+    }
+
+    .vendors-grid.list-view .vendor-btn {
+      grid-column: auto;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const vendorsGrid = document.getElementById("vendorsGrid");
+    const vendorCards = Array.from(document.querySelectorAll(".vendor-card"));
+    const vendorSearchInput = document.getElementById("vendorSearchInput");
+    const vendorSearchBtn = document.getElementById("vendorSearchBtn");
+    const vendorsShowSelect = document.getElementById("vendorsShowSelect");
+    const vendorsSortSelect = document.getElementById("vendorsSortSelect");
+    const vendorsResultsText = document.getElementById("vendorsResultsText");
+    const vendorsSearchFeedback = document.getElementById("vendorsSearchFeedback");
+    const vendorsEmptyState = document.getElementById("vendorsEmptyState");
+    const viewButtons = document.querySelectorAll(".vendors-view-btn");
+
+    let currentView = "grid";
+    let currentShowCount = 50;
+
+    function parseShowValue() {
+      if (!vendorsShowSelect) return 50;
+      currentShowCount = parseInt(vendorsShowSelect.value, 10) || 50;
+    }
+
+    function sortCards(cards) {
+      if (!vendorsSortSelect) return cards;
+
+      const value = vendorsSortSelect.value;
+      const sorted = [...cards];
+
+      if (value === "popularity") {
+        sorted.sort((a, b) => parseInt(b.dataset.products, 10) - parseInt(a.dataset.products, 10));
+      } else if (value === "rating") {
+        sorted.sort((a, b) => parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating));
+      } else if (value === "latest") {
+        sorted.sort((a, b) => parseInt(b.dataset.year, 10) - parseInt(a.dataset.year, 10));
+      } else {
+        sorted.sort((a, b) => {
+          const aPreferred = a.dataset.type === "Preferred" ? 1 : 0;
+          const bPreferred = b.dataset.type === "Preferred" ? 1 : 0;
+          return bPreferred - aPreferred;
+        });
+      }
+
+      return sorted;
+    }
+
+    function updateViewButtons(button) {
+      viewButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+    }
+
+    function applyView() {
+      if (!vendorsGrid) return;
+      if (currentView === "list") {
+        vendorsGrid.classList.add("list-view");
+      } else {
+        vendorsGrid.classList.remove("list-view");
+      }
+    }
+
+    function runVendorsFilter() {
+      if (!vendorsGrid) return;
+
+      parseShowValue();
+
+      const query = vendorSearchInput ? vendorSearchInput.value.trim().toLowerCase() : "";
+      let matchedCards = vendorCards.filter((card) => {
+        const name = (card.dataset.name || "").toLowerCase();
+        const id = (card.dataset.id || "").toLowerCase();
+        return !query || name.includes(query) || id.includes(query);
+      });
+
+      matchedCards = sortCards(matchedCards);
+
+      vendorCards.forEach((card) => card.classList.add("hidden"));
+
+      const visibleCards = matchedCards.slice(0, currentShowCount);
+
+      visibleCards.forEach((card) => {
+        card.classList.remove("hidden");
+        vendorsGrid.appendChild(card);
+      });
+
+      const visibleCount = visibleCards.length;
+      const totalMatched = matchedCards.length;
+
+      if (vendorsResultsText) {
+        vendorsResultsText.innerHTML = `We have <span>${totalMatched}</span> vendors now`;
+      }
+
+      if (vendorsSearchFeedback) {
+        if (query) {
+          vendorsSearchFeedback.textContent = `Showing ${visibleCount} result${visibleCount !== 1 ? "s" : ""} for "${query}"`;
+        } else {
+          vendorsSearchFeedback.textContent = `Showing ${visibleCount} vendor${visibleCount !== 1 ? "s" : ""}`;
+        }
+      }
+
+      if (vendorsEmptyState) {
+        vendorsEmptyState.classList.toggle("show", totalMatched === 0);
+      }
+
+      applyView();
+    }
+
+    if (vendorSearchBtn) {
+      vendorSearchBtn.addEventListener("click", runVendorsFilter);
+    }
+
+    if (vendorSearchInput) {
+      vendorSearchInput.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          runVendorsFilter();
+        }
+      });
+    }
+
+    if (vendorsShowSelect) {
+      vendorsShowSelect.addEventListener("change", runVendorsFilter);
+    }
+
+    if (vendorsSortSelect) {
+      vendorsSortSelect.addEventListener("change", runVendorsFilter);
+    }
+
+    if (viewButtons.length >= 2) {
+      viewButtons[0].addEventListener("click", function () {
+        currentView = "grid";
+        updateViewButtons(this);
+        applyView();
+      });
+
+      viewButtons[1].addEventListener("click", function () {
+        currentView = "list";
+        updateViewButtons(this);
+        applyView();
+      });
+    }
+
+    runVendorsFilter();
+  });
+</script>
+
+<section class="recent-viewed-section">
+  <div class="recent-viewed-container">
+    <div class="recent-viewed-header">
+      <h2>Recent Viewed Product</h2>
+
+      <div class="recent-viewed-arrows">
+        <button class="rv-arrow" id="rvPrev">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <button class="rv-arrow" id="rvNext">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="recent-viewed-slider" id="recentViewedSlider">
+      <div class="recent-product-card">
+        <div class="recent-product-image">
+          <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=300&q=80" alt="Organic Cage Grade A Large Eggs">
+        </div>
+        <div class="recent-product-info">
+          <h3>Organic Cage Grade A Large Eggs</h3>
+          <div class="recent-rating">
+            <span class="stars">★★★★☆</span>
+            <span>1</span>
+          </div>
+          <div class="recent-price">
+            <span class="new-price">$25.22</span>
+            <span class="old-price">$35.55</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="recent-product-card">
+        <div class="recent-product-image">
+          <img src="https://images.unsplash.com/photo-1622484212850-eb596d769edc?auto=format&fit=crop&w=300&q=80" alt="Naturally Flavored Cinnamon Vanilla">
+        </div>
+        <div class="recent-product-info">
+          <h3>Naturally Flavored Cinnamon Vanilla</h3>
+          <div class="recent-rating">
+            <span class="stars">★★☆☆☆</span>
+            <span>1</span>
+          </div>
+          <div class="recent-price">
+            <span class="new-price">$32.22</span>
+            <span class="old-price">$36.55</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="recent-product-card">
+        <div class="recent-product-image">
+          <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=300&q=80" alt="Seeds of Change Organic Watermelon">
+        </div>
+        <div class="recent-product-info">
+          <h3>Seeds of Change Organic Watermelon</h3>
+          <div class="recent-rating">
+            <span class="stars">★★★☆☆</span>
+            <span>1</span>
+          </div>
+          <div class="recent-price">
+            <span class="new-price">$32.22</span>
+            <span class="old-price">$36.22</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="recent-product-card">
+        <div class="recent-product-image">
+          <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=300&q=80" alt="Organic Cage Grade A Large Eggs">
+        </div>
+        <div class="recent-product-info">
+          <h3>Organic Cage Grade A Large Eggs</h3>
+          <div class="recent-rating">
+            <span class="stars">★★★★☆</span>
+            <span>1</span>
+          </div>
+          <div class="recent-price">
+            <span class="new-price">$25.22</span>
+            <span class="old-price">$35.55</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .recent-viewed-section {
+    padding: 60px 0;
+    background: #fff;
+  }
+
+  .recent-viewed-container {
+    width: 94%;
+    max-width: 1900px;
+    margin: auto;
+    border: 2px dashed #e3e7ec;
+    border-radius: 16px;
+    padding: 22px 20px 18px;
+  }
+
+  .recent-viewed-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .recent-viewed-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #253d4e;
+    margin: 0;
+  }
+
+  .recent-viewed-arrows {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .rv-arrow {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: #eef1f5;
+    color: #253d4e;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rv-arrow:hover {
+    background: #3bb77e;
+    color: #fff;
+  }
+
+  .recent-viewed-slider {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .recent-viewed-slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  .recent-product-card {
+    flex: 0 0 calc(25% - 11px);
+    min-width: 320px;
+    border: 2px dashed #e3e7ec;
+    border-radius: 14px;
+    padding: 22px 20px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: #fff;
+  }
+
+  .recent-product-image {
+    width: 86px;
+    height: 110px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .recent-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .recent-product-info h3 {
+    font-size: 18px;
+    line-height: 1.45;
+    font-weight: 700;
+    color: #253d4e;
+    margin-bottom: 10px;
+  }
+
+  .recent-rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: #98a2b3;
+  }
+
+  .recent-rating .stars {
+    color: #f5b400;
+    letter-spacing: 1px;
+  }
+
+  .recent-price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .recent-price .new-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #3bb77e;
+  }
+
+  .recent-price .old-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #c7cdd4;
+    text-decoration: line-through;
+  }
+
+  @media (max-width: 1200px) {
+    .recent-product-card {
+      flex: 0 0 calc(50% - 7px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .recent-viewed-container {
+      width: 92%;
+      padding: 18px 14px 14px;
+    }
+
+    .recent-viewed-header h2 {
+      font-size: 22px;
+    }
+
+    .recent-product-card {
+      flex: 0 0 100%;
+      min-width: 280px;
+      padding: 18px 16px;
+    }
+
+    .recent-product-image {
+      width: 70px;
+      height: 95px;
+    }
+
+    .recent-product-info h3 {
+      font-size: 16px;
+    }
+
+    .recent-price .new-price {
+      font-size: 17px;
+    }
+
+    .recent-price .old-price {
+      font-size: 15px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.getElementById("recentViewedSlider");
+    const prevBtn = document.getElementById("rvPrev");
+    const nextBtn = document.getElementById("rvNext");
+
+    if (slider && prevBtn && nextBtn) {
+      function getScrollAmount() {
+        const card = slider.querySelector(".recent-product-card");
+        if (!card) return 300;
+        const styles = window.getComputedStyle(slider);
+        const gap = parseInt(styles.gap || 14, 10);
+        return card.offsetWidth + gap;
+      }
+
+      nextBtn.addEventListener("click", function () {
+        slider.scrollBy({
+          left: getScrollAmount(),
+          behavior: "smooth"
+        });
+      });
+
+      prevBtn.addEventListener("click", function () {
+        slider.scrollBy({
+          left: -getScrollAmount(),
+          behavior: "smooth"
+        });
+      });
+    }
+  });
+</script>
+
+<section class="newsletter-banner">
+  <div class="newsletter-pattern"></div>
+
+  <div class="newsletter-content">
+    <h2>Stay home & get your daily<br>needs from our shop</h2>
+    <p>Start Your Daily Shopping with <span>Nest Mart</span></p>
+
+    <form class="newsletter-form">
+      <input type="email" placeholder="Your email address" />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <div class="newsletter-image">
+    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80" alt="Delivery groceries">
+  </div>
+</section>
+
+<style>
+  .newsletter-banner {
+    position: relative;
+    width: 94%;
+    max-width: 1550px;
+    margin: 20px auto 60px;
+    padding: 60px 60px;
+    min-height: 430px;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #dff1e7;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .newsletter-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.12;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Cg fill='none' stroke='%2392b5a4' stroke-width='2'%3E%3Ccircle cx='50' cy='230' r='58'/%3E%3Ccircle cx='210' cy='55' r='42'/%3E%3Cellipse cx='112' cy='82' rx='28' ry='66' transform='rotate(18 112 82)'/%3E%3Cpath d='M125 230c26-36 76-54 122-43'/%3E%3Cpath d='M188 171c15-24 37-34 64-30'/%3E%3Cpath d='M228 134l30 5-18 24z'/%3E%3Cpath d='M25 164c23-19 50-28 78-25'/%3E%3Cpath d='M258 248c-6-18-18-30-36-35'/%3E%3Cpath d='M141 262c18-16 39-22 65-18'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 320px;
+  }
+
+  .newsletter-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+  }
+
+  .newsletter-content h2 {
+    margin: 0 0 24px;
+    font-size: 72px;
+    line-height: 1.1;
+    font-weight: 700;
+    color: #253d4e;
+    letter-spacing: -1px;
+  }
+
+  .newsletter-content p {
+    margin: 0 0 36px;
+    font-size: 22px;
+    color: #7e7e7e;
+    font-weight: 500;
+  }
+
+  .newsletter-content p span {
+    color: #3bb77e;
+    font-weight: 700;
+  }
+
+  .newsletter-form {
+    width: 100%;
+    max-width: 620px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 999px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    height: 74px;
+    border: none;
+    outline: none;
+    padding: 0 28px;
+    font-size: 18px;
+    color: #253d4e;
+    background: transparent;
+  }
+
+  .newsletter-form input::placeholder {
+    color: #a0a7b4;
+  }
+
+  .newsletter-form button {
+    min-width: 175px;
+    height: 74px;
+    border: none;
+    border-radius: 999px;
+    background: #3bb77e;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .newsletter-form button:hover {
+    background: #2ea86f;
+  }
+
+  .newsletter-image {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 34%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-self: stretch;
+  }
+
+  .newsletter-image img {
+    width: 100%;
+    max-width: 470px;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+  }
+
+  @media (max-width: 1400px) {
+    .newsletter-banner {
+      padding: 50px 40px;
+      min-height: 390px;
+    }
+
+    .newsletter-content h2 {
+      font-size: 58px;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    .newsletter-banner {
+      padding: 40px 30px;
+      min-height: 360px;
+    }
+
+    .newsletter-content h2 {
+      font-size: 46px;
+    }
+
+    .newsletter-content p {
+      font-size: 19px;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button {
+      height: 64px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .newsletter-banner {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 36px 24px;
+      min-height: auto;
+    }
+
+    .newsletter-content {
+      max-width: 100%;
+    }
+
+    .newsletter-content h2 {
+      font-size: 38px;
+    }
+
+    .newsletter-content p {
+      font-size: 17px;
+      margin-bottom: 24px;
+    }
+
+    .newsletter-image {
+      width: 100%;
+      flex: unset;
+      justify-content: center;
+    }
+
+    .newsletter-image img {
+      max-width: 430px;
+      max-height: 300px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .newsletter-banner {
+      width: 92%;
+      padding: 28px 16px;
+      border-radius: 20px;
+    }
+
+    .newsletter-content h2 {
+      font-size: 30px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .newsletter-content p {
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .newsletter-form {
+      flex-direction: column;
+      background: transparent;
+      box-shadow: none;
+      gap: 12px;
+      border-radius: 0;
+      max-width: 100%;
+    }
+
+    .newsletter-form input {
+      width: 100%;
+      height: 56px;
+      border-radius: 14px;
+      background: #fff;
+      padding: 0 18px;
+      font-size: 15px;
+    }
+
+    .newsletter-form button {
+      width: 100%;
+      min-width: unset;
+      height: 56px;
+      border-radius: 14px;
+      font-size: 16px;
+    }
+
+    .newsletter-image img {
+      max-width: 100%;
+      max-height: 240px;
+    }
+  }
+</style>
+
+<section class="services-features">
+  <div class="services-container">
+
+    <div class="service-box">
+      <div class="service-icon">
+        <img src="icon-1.png" alt="Best prices">
+      </div>
+      <div class="service-info">
+        <h3>Best prices & offers</h3>
+        <p>Orders $50 or more</p>
+      </div>
+    </div>
+
+    <div class="service-box">
+      <div class="service-icon">
+        <img src="icon-2.png" alt="Free delivery">
+      </div>
+      <div class="service-info">
+        <h3>Free delivery</h3>
+        <p>24/7 amazing services</p>
+      </div>
+    </div>
+
+    <div class="service-box">
+      <div class="service-icon">
+        <img src="icon-3.png" alt="Daily deal">
+      </div>
+      <div class="service-info">
+        <h3>Great daily deal</h3>
+        <p>When you sign up</p>
+      </div>
+    </div>
+
+    <div class="service-box">
+      <div class="service-icon">
+        <img src="icon-4.png" alt="Wide assortment">
+      </div>
+      <div class="service-info">
+        <h3>Wide assortment</h3>
+        <p>Mega discounts</p>
+      </div>
+    </div>
+
+    <div class="service-box">
+      <div class="service-icon">
+        <img src="icon-5.png" alt="Easy returns">
+      </div>
+      <div class="service-info">
+        <h3>Easy returns</h3>
+        <p>Within 30 days</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .services-features {
+    padding: 20px 0 30px;
+    background: #fff;
+  }
+
+  .services-container {
+    width: 94%;
+    max-width: 2100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+  }
+
+  .service-box {
+    background: #f4f6f9;
+    border-radius: 12px;
+    padding: 22px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: 0.3s;
+  }
+
+  .service-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+  }
+
+  .service-icon {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .service-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .service-info h3 {
+    margin: 0 0 6px;
+    font-size: 18px;
+    line-height: 1.3;
+    color: #253d4e;
+    font-weight: 700;
+  }
+
+  .service-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #7e7e7e;
+    font-weight: 500;
+  }
+
+  @media (max-width: 1200px) {
+    .services-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .services-container {
+      width: 92%;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-box {
+      padding: 18px 16px;
+    }
+
+    .service-info h3 {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .services-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+
+
+<footer class="main-footer">
+  <div class="footer-top">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- Column 1 -->
+        <div class="footer-col footer-brand">
+          <a href="#" class="footer-logo">
+            <img src="logo-vvC7y5Z-.svg" alt="Nest Logo">
+          </a>
+
+          <p class="footer-desc">Awesome grocery store website template</p>
+
+          <ul class="footer-contact">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span><strong>Address:</strong> 5171W Campbell Ave Kent, Utah 53127 United States</span>
+            </li>
+            <li>
+              <i class="fas fa-headphones-alt"></i>
+              <span><strong>Call Us:</strong> (+880) - 017XXXXXXX</span>
+            </li>
+            <li>
+              <i class="far fa-paper-plane"></i>
+              <span><strong>Email:</strong> sale@nest.com</span>
+            </li>
+            <li>
+              <i class="far fa-clock"></i>
+              <span><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+          <h3>Company</h3>
+          <ul class="footer-links">
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Delivery Information</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Support Center</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+          <h3>Account</h3>
+          <ul class="footer-links">
+            <li><a href="#">Sign In</a></li>
+            <li><a href="#">View Cart</a></li>
+            <li><a href="#">My Wishlist</a></li>
+            <li><a href="#">Track My Order</a></li>
+            <li><a href="#">Help Ticket</a></li>
+            <li><a href="#">Shipping Details</a></li>
+            <li><a href="#">Compare products</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="footer-col">
+          <h3>Corporate</h3>
+          <ul class="footer-links">
+            <li><a href="#">Become a Vendor</a></li>
+            <li><a href="#">Affiliate Program</a></li>
+            <li><a href="#">Farm Business</a></li>
+            <li><a href="#">Farm Careers</a></li>
+            <li><a href="#">Our Suppliers</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Promotions</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5 -->
+        <div class="footer-col">
+          <h3>Popular</h3>
+          <ul class="footer-links">
+            <li><a href="#">Milk & Flavoured Milk</a></li>
+            <li><a href="#">Butter and Margarine</a></li>
+            <li><a href="#">Eggs Substitutes</a></li>
+            <li><a href="#">Marmalades</a></li>
+            <li><a href="#">Sour Cream and Dips</a></li>
+            <li><a href="#">Tea & Kombucha</a></li>
+            <li><a href="#">Cheese</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 6 -->
+        <div class="footer-col footer-app">
+          <h3>Install App</h3>
+          <p class="footer-app-text">From App Store or Google Play</p>
+
+          <div class="footer-store-buttons">
+            <a href="#" class="store-btn">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+            </a>
+            <a href="#" class="store-btn">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store">
+            </a>
+          </div>
+
+          <p class="payment-title">Secured Payment Gateway</p>
+
+          <div class="payment-methods">
+            <img src="payment-method (2).png" alt="Visa">
+         
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-container footer-bottom-wrap">
+      <div class="footer-copy">
+        <p>©2026 Nest - React template.</p>
+        <span>All rights reserved.</span>
+      </div>
+
+      <div class="footer-hotlines">
+        <div class="hotline-box">
+          <i class="fas fa-phone-volume"></i>
+          <div>
+            <strong>01XXXXXXXX</strong>
+            <span>Working 8:00 - 22:00</span>
+          </div>
+        </div>
+
+        <div class="hotline-box">
+          <i class="fas fa-phone-volume"></i>
+          <div>
+            <strong>01XXXXXXXX</strong>
+            <span>24/7 Support Center</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-social">
+        <div class="follow-row">
+          <strong>Follow Us</strong>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-skype"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <p>Up to 15% discount on your first subscribe</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .main-footer {
+    background: #fff;
+    border-top: 1px solid #f1f1f1;
+  }
+
+  .footer-container {
+    width: 95%;
+    max-width: 1900px;
+    margin: auto;
+  }
+
+  .footer-top {
+    padding: 40px 0 28px;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr 1fr 1fr 1fr 1.2fr;
+    gap: 28px;
+  }
+
+  .footer-logo img {
+    width: 180px;
+    display: block;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+
+  .footer-desc {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #253d4e;
+    max-width: 280px;
+    margin: 0 0 28px;
+  }
+
+  .footer-contact {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-contact li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+    color: #253d4e;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .footer-contact li i {
+    color: #3bb77e;
+    font-size: 18px;
+    margin-top: 4px;
+    flex-shrink: 0;
+  }
+
+  .footer-col h3 {
+    font-size: 22px;
+    color: #253d4e;
+    font-weight: 700;
+    margin: 0 0 22px;
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 14px;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: #253d4e;
+    font-size: 15px;
+    transition: 0.3s;
+  }
+
+  .footer-links a:hover {
+    color: #3bb77e;
+    padding-left: 3px;
+  }
+
+  .footer-app-text {
+    color: #7e7e7e;
+    font-size: 15px;
+    margin: 0 0 18px;
+  }
+
+  .footer-store-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .store-btn img {
+    height: 42px;
+    display: block;
+    object-fit: contain;
+  }
+
+  .payment-title {
+    font-size: 16px;
+    color: #7e7e7e;
+    margin: 0 0 14px;
+  }
+
+  .payment-methods {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .payment-methods img {
+    height: 26px;
+    object-fit: contain;
+    display: block;
+  }
+
+  .footer-bottom {
+    border-top: 2px solid #bce3c9;
+    padding: 20px 0;
+  }
+
+  .footer-bottom-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+
+  .footer-copy p,
+  .footer-copy span {
+    margin: 0;
+    color: #7e7e7e;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .footer-hotlines {
+    display: flex;
+    align-items: center;
+    gap: 42px;
+    flex-wrap: wrap;
+  }
+
+  .hotline-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .hotline-box i {
+    font-size: 32px;
+    color: #9aa3ad;
+  }
+
+  .hotline-box strong {
+    display: block;
+    color: #3bb77e;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .hotline-box span {
+    color: #253d4e;
+    font-size: 14px;
+  }
+
+  .footer-social {
+    text-align: right;
+  }
+
+  .follow-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .follow-row strong {
+    color: #253d4e;
+    font-size: 16px;
+  }
+
+  .social-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .social-icons a {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #3bb77e;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 15px;
+  }
+
+  .social-icons a:hover {
+    background: #253d4e;
+    transform: translateY(-2px);
+  }
+
+  .footer-social p {
+    margin: 0;
+    color: #7e7e7e;
+    font-size: 15px;
+  }
+
+  @media (max-width: 1450px) {
+    .footer-grid {
+      grid-template-columns: 1.3fr 1fr 1fr 1fr 1fr;
+    }
+
+    .footer-app {
+      grid-column: span 2;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .footer-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-app {
+      grid-column: auto;
+    }
+
+    .footer-bottom-wrap {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-social {
+      text-align: left;
+    }
+
+    .follow-row {
+      justify-content: flex-start;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .footer-logo img {
+      width: 150px;
+    }
+
+    .footer-desc {
+      font-size: 16px;
+    }
+
+    .footer-col h3 {
+      font-size: 20px;
+    }
+
+    .footer-hotlines {
+      gap: 22px;
+    }
+
+    .hotline-box strong {
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-top {
+      padding: 30px 0 22px;
+    }
+
+    .footer-bottom {
+      padding: 16px 0;
+    }
+
+    .footer-hotlines {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
+
+<script>
+  window.addEventListener("load", function () {
+    const cartLinks = document.querySelectorAll(".cart");
+
+    cartLinks.forEach(function (oldLink) {
+      const newLink = oldLink.cloneNode(true);
+      newLink.setAttribute("href", "checkout.html");
+
+      oldLink.parentNode.replaceChild(newLink, oldLink);
+
+      newLink.onclick = null;
+
+      newLink.addEventListener("click", function (e) {
+        e.stopImmediatePropagation();
+        window.location.href = "checkout.html";
+      }, true);
+    });
+  });
+</script>
+</body>
+</html>
